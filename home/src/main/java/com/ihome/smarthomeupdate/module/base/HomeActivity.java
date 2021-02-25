@@ -50,6 +50,7 @@ import com.ihome.smarthomeupdate.module.base.eventbusmodel.BTMessageEvent;
 import com.ihome.smarthomeupdate.module.base.eventbusmodel.BaseMessageEvent;
 import com.ihome.smarthomeupdate.module.base.eventbusmodel.LogEvent;
 import com.ihome.smarthomeupdate.receiver.AdminReceiver;
+import com.ihome.smarthomeupdate.receiver.PackageBroadCastReceiver;
 import com.ihome.smarthomeupdate.service.AlarmService;
 import com.ihome.smarthomeupdate.utils.CrashHandlerUtils;
 import com.ihome.smarthomeupdate.utils.EventBusUtils;
@@ -82,13 +83,14 @@ public class HomeActivity extends Activity {
     static final String URL1 =  "https://cdn.llscdn.com/yy/files/xs8qmxn8-lls-LLS-5.8-800-20171207-111607.apk";
 
 
-
+  PackageBroadCastReceiver mInstallAppBroadcastReceiver = new PackageBroadCastReceiver();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_appupdate);
         ConnectionService.startService(this);
+        registerInstallAppBroadcastReceiver();
           new File(Utils.PARENT_PATH).mkdirs();
 
         DownloadTask task = createDownloadTask(URL1,"test.apk");
@@ -175,7 +177,28 @@ public class HomeActivity extends Activity {
     }
 
 
+    private void registerInstallAppBroadcastReceiver() {
 
+        IntentFilter intentFilter =new IntentFilter();
+
+        intentFilter.addAction(Intent.ACTION_PACKAGE_ADDED);
+
+        intentFilter.addAction(Intent.ACTION_PACKAGE_REPLACED);
+
+        intentFilter.addAction(Intent.ACTION_PACKAGE_REMOVED);
+
+        intentFilter.addDataScheme("package");
+
+        registerReceiver(mInstallAppBroadcastReceiver, intentFilter);
+
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(mInstallAppBroadcastReceiver);
+    }
 }
 
 

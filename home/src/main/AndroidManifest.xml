@@ -69,7 +69,8 @@
         android:smallScreens="true" />
 
 
-
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <application
         android:name="com.ihome.smarthomeupdate.base.MyApplication"
@@ -170,6 +171,19 @@
 
         <receiver android:name="com.ihome.smarthomeupdate.applockscreen.receiver.LockScreenReceiver" />
         <receiver android:name="com.ihome.smarthomeupdate.receiver.AlarmReceiver" />
+
+
+
+        <receiver android:name=".receiver.PackageBroadCastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+
 
 
 
