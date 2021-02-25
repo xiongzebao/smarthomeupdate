@@ -83,6 +83,20 @@ dependencies {
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'org.greenrobot:greendao:3.2.2' // 添加库
     implementation('com.github.rubensousa:floatingtoolbar:1.5.1')
+    //implementation 'com.liulishuo.filedownloader:library:1.7.7'
+
+
+ 
+
+
+    // okdownload核心库
+    implementation 'com.liulishuo.okdownload:okdownload:1.0.5'
+//存储断点信息的数据库
+    implementation 'com.liulishuo.okdownload:sqlite:1.0.5'
+//提供okhttp连接，如果使用的话，需要引入okhttp网络请求库
+    implementation 'com.liulishuo.okdownload:okhttp:1.0.5'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+
     implementation project(':app')
     implementation project(':bottom-navigation-bar')
     implementation project(':searchview')

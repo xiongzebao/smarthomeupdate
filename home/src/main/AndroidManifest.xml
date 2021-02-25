@@ -111,7 +111,7 @@
         <activity android:name="com.ihome.smarthomeupdate.module.home.view.DataShowActivity" />
         <activity
             android:name="com.ihome.smarthomeupdate.module.base.HomeActivity"
-            android:theme="@android:style/Theme.NoDisplay"
+
             android:launchMode="singleTask"
             android:screenOrientation="portrait">
             <intent-filter>
