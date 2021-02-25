@@ -1,0 +1,12 @@
+include ':lib'
+include ':zxinglite'
+include ':zxinglite'
+include ':searchview'
+include ':bottom-navigation-bar'
+include ':bottom-navigation-bar'
+include ':home'
+include ':views'
+include ':tools'
+include ':network'
+include ':app'
+rootProject.name = "base"

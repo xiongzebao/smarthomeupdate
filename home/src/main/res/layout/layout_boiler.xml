@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <Button
+            android:layout_weight="1"
+            android:text="添加开启事件"
+            android:id="@+id/btn_open"
+            android:layout_width="0dp"
+            android:layout_height="50dp">
+
+        </Button>
+        <Button
+            android:layout_weight="1"
+            android:text="添加关闭事件"
+            android:id="@+id/btn_close"
+            android:layout_width="0dp"
+            android:layout_height="50dp">
+
+        </Button>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_weight="1"
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/btn_start"
+        android:text="定时启动"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+    </Button>
+
+</LinearLayout>
