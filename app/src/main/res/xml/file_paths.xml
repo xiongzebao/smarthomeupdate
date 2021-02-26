@@ -4,7 +4,7 @@
          
         <external-path
             name="files_root"
-            path="Android/data/com.ihome.smarthome/" />
+            path="Android/data/com.ihome.smarthomeupdate/" />
 
         <external-path
             name="external_storage_root"
@@ -13,7 +13,7 @@
 
         <files-path
             name="qdrl"
-            path="Android/data/com.ihome.smarthome/files/" />
+            path="Android/data/com.ihome.smarthomeupdate/files/" />
         <external-path
             name="external_files"
             path="." />
@@ -23,7 +23,7 @@
         <root-path
             name="name"
             path="" />
-        <files-path path="Android/data/com.ihome.smarthome/files/" name="qdrl" />
+        <files-path path="Android/data/com.ihome.smarthomeupdate/files/" name="qdrl" />
         <external-path name="external_files" path="."/>
         <external-files-path path="files/qdrl" name="images"/>
         <root-path name="name" path="" />

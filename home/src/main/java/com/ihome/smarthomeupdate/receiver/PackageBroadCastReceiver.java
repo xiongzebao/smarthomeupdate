@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.text.TextUtils;
 
 import com.erongdu.wireless.tools.log.MyLog;
+import com.ihome.smarthomeupdate.module.base.Utils;
+
+import java.io.File;
 
 /**
  * @author xiongbin
@@ -21,6 +24,9 @@ public class PackageBroadCastReceiver extends BroadcastReceiver {
             // 获取应用包名，和要监听的应用包名做对比
             String packName = intent.getData().getSchemeSpecificPart();
             MyLog.e(packName+"应用安装");
+            if(packName.equals("com.ihome.smarthome")){
+                new File(Utils.PARENT_PATH+"/test.apk").delete();
+            }
         }else if (TextUtils.equals(intent.getAction(),Intent.ACTION_PACKAGE_REMOVED)){
             // 应用卸载
             // 获取应用包名
